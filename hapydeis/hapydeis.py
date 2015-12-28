@@ -41,6 +41,9 @@ class DeisLevel0Client(object):
     def create(self, **args):
         return self._do_request('post', **args)
 
+    def delete(self):
+        return self._do_request('delete')
+
     def __getattr__(self, name):
         return DeisLevel0Client(
             self.endpoint,
