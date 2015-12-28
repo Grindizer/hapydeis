@@ -21,9 +21,15 @@ Or in a develop mode from a git repository ::
 
     pip install -e git+https://github.com/Grindizer/hapydeis#egg=hapydeis
 
-Once installed you can run ::
+Usage
+=====
 
- hapydeis_cli --help
+::
+
+    from hapydeis import Client
+    mycluster = Client('http://deis.mycluster.example.com')
+    mycluster.authenticate('user', 'just an example here')
+    list_apps = mycluster.apps.get()
 
 Development
 ===========
