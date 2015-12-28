@@ -33,7 +33,7 @@ class DeisLevel0Client(object):
         response = _do(self.path, headers=headers, json=args)
         if response.status_code > 299:
             raise DeisLevel0Exception(response.text)
-        return response.json()
+        return (response.text and response.json()) or '{}'
 
     def get(self):
         return self._do_request('get')
