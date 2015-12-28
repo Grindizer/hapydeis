@@ -31,7 +31,7 @@ class DeisLevel0Client(object):
 
         _do = getattr(self.s, method, 'get')
         response = _do(self.path, headers=headers, json=args)
-        if response.status_code != 200:
+        if response.status_code > 299:
             raise DeisLevel0Exception(response.text)
         return response.json()
 
