@@ -1,0 +1,19 @@
+CHANGES
+=======
+
+v0.0.2
+------
+
+* Update README.rst
+* added delete method
+* Handle empty responses
+
+0.0.1
+-----
+
+* A request is success if status code < 300
+* expose Deis Client exception class
+* Update README file with an exanple of usage
+* First usable version. Incluse level0 client + unit tests
+* Initial commit
+* Initial commit, Project generated based by cookiecutter template: https://github.com/Grindizer/cookiecutter-pysimple-cli
