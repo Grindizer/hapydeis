@@ -2,7 +2,8 @@
 Hapydeis
 ===========
 
-
+A Python thin wrapper around deis api, for now only provide a level 0 client (which should be improved with a couple
+of new features quite soon)
 
 Installation
 ============
