@@ -30,7 +30,7 @@ class DeisLevel0Client(object):
             headers = {'Authorization': "token {0}".format(self.token)}
 
         _do = getattr(self.s, method, 'get')
-        response = _do(self.path, headers=headers, json=args)
+        response = _do(self.path, headers=headers, json=args, verify=False)
         if response.status_code > 299:
             raise DeisLevel0Exception(response.text)
         return (response.text and response.json()) or '{}'
@@ -52,3 +52,22 @@ class DeisLevel0Client(object):
             self.token,
             self.s
         )
+
+#
+# class DeisApp(object):
+#     def __init__(self, client0, app_info):
+#         self.client0 = client0
+#         self.info = app_info
+#
+#     def configs(self):
+#
+# class DeisLevel1Client(object):
+#     def __init__(self, client0):
+#         self.client0 = client0
+#
+#     def authenticate(self, user, pwd):
+#         return self.client0.authenticate(user, pwd)
+#
+#     def apps(self):
+#         for app in self.client0.apps():
+#             yield DeisApp(self.client0, app)
